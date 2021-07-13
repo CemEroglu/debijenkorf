@@ -4,7 +4,7 @@ import data from './data/people.json'
 function App() {
   return (
     <div className="App">
-      <SearchBar lookUpData={data}></SearchBar>
+      <SearchBar lookUpData={data} maxElement={4}></SearchBar>
     </div>
   );
 }

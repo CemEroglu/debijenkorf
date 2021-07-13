@@ -1,12 +1,8 @@
 import './SearchBar.css';
-import { useState, useEffect } from 'react'
-
 function ListElement(props) {
-// var str = "Hello";
-// var substr = "el";
-let abc = props.name.replace(props.searchText, '</b>' + props.searchText + '<b>');
+let styledInfo = props.name.replace(props.searchText, '</b>' + props.searchText + '<b>') + '</b>' + ' ('+ props.id + ')' + '<b>'
 function createMarkup() {
-    return {__html: "<b>"+abc+"</b>" };
+    return {__html: "<b>"+styledInfo+"</b>" };
   }
     return (
         <div className="ListElement">

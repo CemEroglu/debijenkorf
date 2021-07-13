@@ -12,8 +12,9 @@ function List(props) {
         <div className="List">
         {
             list.map((item,index)=>{
-                if(index<4){
-            return <ListElement key={item.searchterm} searchText={props.searchText} name={item.searchterm} id={item.nrResults}></ListElement> 
+                if(index<props.maxElement){
+            return <ListElement key={item.searchterm} searchText={props.searchText} name={item.searchterm} id={item.nrResults}></ListElement>
+            
         }
         })
     }    
