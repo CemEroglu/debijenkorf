@@ -7,7 +7,7 @@ import List from './List'
 
 function SearchBar(props) {
     const [searchText, setSearchText] = useState("");
-    const [filteredData, setFilteredData] = useState(props.lookUpData)
+    const [filteredData, setFilteredData] = useState(props.lookUpData.suggestions)
     useEffect(() => {
         let newFilteredData = []
         props.lookUpData.suggestions.map(item=>{
@@ -30,13 +30,16 @@ function SearchBar(props) {
                         src={search}
                     />
                 </button>
-                <button className={true ? "Icon Close" : "Icon Close Hide"}>
+                <button className={searchText ? "Icon Close" : "Icon Close Hide"} onClick={()=>{
+                    setSearchText("")
+                }}>
                     <img
                         src={close}
                     />
                 </button>
             </div>
-            <List data={filteredData}/>
+            
+            <List searchText={searchText} list={filteredData}/>
         </div>
     );
 }
